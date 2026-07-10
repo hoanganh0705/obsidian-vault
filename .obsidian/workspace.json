@@ -11,10 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "image",
+              "state": {
+                "file": "01 Ielts/Listening/Numbers And Letters/Pasted image 20260710141145.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20260710141145"
             }
           }
         ]
@@ -187,6 +189,9 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "01 Ielts/Listening/Numbers And Letters/Misleading Words.md",
+    "01 Ielts/Listening/Numbers And Letters/Pasted image 20260710141145.png",
+    "misleadingWord.jfif",
     "01 Ielts/Listening/Introduction/Overview Of Question Types.md",
     "01 Ielts/Listening/Introduction/Common Information.md",
     "01 Ielts/Listening/Numbers And Letters/How to display address.md",
@@ -204,7 +209,6 @@
     "01 Ielts/Listening/Numbers And Letters/How to display date.md",
     "01 Ielts/Listening/Numbers And Letters/download.jpeg",
     "Pasted image 20260709224634.png",
-    "Pasted image 20260709224615.png",
     "01 Ielts/Listening/Untitled.md",
     "01 Ielts/Listening/Numbers And Letters",
     "01 Ielts/Listening/Identifying Paraphrase",
@@ -224,7 +228,6 @@
     "copilot/copilot-custom-prompts/Make longer.md",
     "copilot/copilot-custom-prompts/Make shorter.md",
     "copilot/copilot-custom-prompts/Explain like I am 5.md",
-    "copilot/copilot-custom-prompts/Simplify.md",
     "copilot/copilot-custom-prompts",
     "copilot",
     "01 Ielts/Listening/Introduction/Structure",
@@ -233,7 +236,6 @@
     "Untitled.canvas",
     "01 Ielts/MIstakes",
     "01 Ielts/Vocab",
-    "01 Ielts/Writing",
-    "01 Ielts/Speaking"
+    "01 Ielts/Writing"
   ]
 }
