@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"baf1c2234ac00ccf","type":"file","file":"01 Ielts/Listening/Introduction/Common Information.md","x":-400,"y":-300,"width":400,"height":400},
+		{"id":"92d3541eaa8d4b91","type":"file","file":"01 Ielts/Listening/Introduction/Overview Of Question Types.md","x":280,"y":-260,"width":400,"height":400},
+		{"id":"43d9c9746ccd83c9","type":"file","file":"01 Ielts/Listening/Introduction/Point Scale.md","x":-480,"y":260,"width":400,"height":400},
+		{"id":"c30ab436d848be91","type":"file","file":"01 Ielts/Listening/Introduction/Structure.md","x":300,"y":300,"width":400,"height":400}
+	],
+	"edges":[
+		{
+			"id":"1a2c46f59cd4107a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"baf1c2234ac00ccf",
+			"fromSide":"bottom",
+			"toNode":"92d3541eaa8d4b91",
+			"toSide":"bottom"
+		}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}
