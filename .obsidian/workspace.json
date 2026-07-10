@@ -11,12 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "01 Ielts/Listening/Numbers And Letters/Pasted image 20260710141145.png"
+                "file": "01 Ielts/Listening/SignPosting Words/Popular Signposting Words.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260710141145"
+              "icon": "lucide-file",
+              "title": "Popular Signposting Words"
             }
           }
         ]
@@ -189,9 +191,22 @@
   },
   "active": "e87a91a5876011c9",
   "lastOpenFiles": [
+    "01 Ielts/Listening/SignPosting Words/Pasted image 20260710144648.png",
+    "01 Ielts/Listening/SignPosting Words/Pasted image 20260710144639.png",
+    "01 Ielts/Listening/SignPosting Words/Pasted image 20260710144609.png",
+    "01 Ielts/Listening/SignPosting Words/Pasted image 20260710144556.png",
+    "01 Ielts/Listening/SignPosting Words/Pasted image 20260710144522.png",
+    "01 Ielts/Listening/SignPosting Words/Pasted image 20260710144511.png",
+    "01 Ielts/Listening/SignPosting Words/Introduction.md",
+    "01 Ielts/Listening/SignPosting Words/Popular Signposting Words.md",
+    "01 Ielts/Listening/SignPosting Words/Pasted image 20260710144305.png",
+    "01 Ielts/Listening/Distractors/Distractors.md",
+    "01 Ielts/Listening/Distractors/Pasted image 20260710143904.png",
+    "01 Ielts/Listening/Untitled.md",
+    "01 Ielts/Listening/Distractors",
+    "01 Ielts/Listening/SignPosting Words",
     "01 Ielts/Listening/Identifying Distractors",
     "01 Ielts/Listening/Numbers And Letters/Pasted image 20260710141145.png",
-    "01 Ielts/Listening/Untitled.md",
     "01 Ielts/Listening/Numbers And Letters/Misleading Words.md",
     "misleadingWord.jfif",
     "01 Ielts/Listening/Introduction/Overview Of Question Types.md",
@@ -200,17 +215,10 @@
     "01 Ielts/Listening/Numbers And Letters/address.jpeg",
     "01 Ielts/Listening/Numbers And Letters/Some popular names.md",
     "01 Ielts/Listening/Numbers And Letters/popularFemaleName.jpeg",
-    "01 Ielts/Listening/Numbers And Letters/popularMaleName.jpeg",
     "01 Ielts/Listening/Numbers And Letters/How to display fraction.md",
-    "01 Ielts/Listening/Numbers And Letters/fraction.jpeg",
     "01 Ielts/Listening/Numbers And Letters/How to display money.md",
-    "01 Ielts/Listening/Numbers And Letters/moneyy.jpeg",
-    "01 Ielts/Listening/Numbers And Letters/money.jpeg",
     "01 Ielts/Listening/Numbers And Letters/How to display numbers.md",
-    "01 Ielts/Listening/Numbers And Letters/download (1).jpeg",
     "01 Ielts/Listening/Numbers And Letters/How to display date.md",
-    "01 Ielts/Listening/Numbers And Letters/download.jpeg",
-    "Pasted image 20260709224634.png",
     "01 Ielts/Listening/Numbers And Letters",
     "01 Ielts/Listening/Identifying Paraphrase",
     "01 Ielts/Listening/Introduction/Structure.md",
@@ -226,17 +234,11 @@
     "copilot/copilot-custom-prompts/Remove URLs.md",
     "copilot/copilot-custom-prompts/Generate glossary.md",
     "copilot/copilot-custom-prompts/Generate table of contents.md",
-    "copilot/copilot-custom-prompts/Make longer.md",
-    "copilot/copilot-custom-prompts/Make shorter.md",
-    "copilot/copilot-custom-prompts/Explain like I am 5.md",
     "copilot/copilot-custom-prompts",
     "copilot",
     "01 Ielts/Listening/Introduction/Structure",
     "01 Ielts/Listening/Litstening.canvas.canvas",
     "01 Ielts/Listening/Introduction",
-    "Untitled.canvas",
-    "01 Ielts/MIstakes",
-    "01 Ielts/Vocab",
-    "01 Ielts/Writing"
+    "Untitled.canvas"
   ]
 }
