@@ -1,0 +1,1 @@
+![[Pasted image 20260711152300.png]]Task 1 chiếm 1/3 điểm Ielts Writing
