@@ -1,0 +1,5 @@
+- Luôn đọc câu hỏi trước khi đọc văn bản để xác định nội dung cần ưu tiên xác định cũng như đọc hiểu.
+- Sử dụng phương pháp loại trừ để bỏ những đáp án mà chúng ta cho rằng sẽ sai và tập trung vào các đáp án còn lại. Điều này giúp chúng ta có thể định hướng thông tin và tìm kiếm một cách nhanh chóng nhất. 
+- Thông tin trong bài sẽ được sắp xếp theo thứ tự câu hỏi. Vì vậy, chúng ta sẽ tìm kiếm thông tin từ trên xuống dưới theo tương quan vị trí các câu hỏi.
+- Khi hết thời gian làm bài mà vẫn chưa tìm được câu trả lời, hãy phỏng đoán và loại trừ để chọn ra đáp án bản thân thấy hợp lý nhất. Vì đây là dạng bài trắc nghiệm nên chúng ta luôn có một tỉ lệ nhất định sẽ chọn được đáp án đúng.
+- Trước khi đưa ra quyết định cuối cùng để chọn đáp án đúng, luôn luôn kiểm tra lại thông tin trong bài và so sánh tại sao các đáp án còn lại sai để đảm bảo tính chính xác.

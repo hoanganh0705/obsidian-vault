@@ -1,0 +1,4 @@
+- Các câu trả lời trong văn bản sẽ xuất hiện giống với thứ tự các câu hỏi. VD: thông tin cho câu số 1 sẽ xuất hiện trước thông tin cho câu số 2. Vì vậy, trong trường hợp làm xong câu 1 và không tìm thấy thông tin của câu 2, các bạn có thể tìm tiếp từ khóa của câu 3, từ đó thu hẹp phạm vi tìm kiếm câu 2 ở giữa hai đoạn này. 
+- Không được vượt quá số từ quy định (word limit). Nếu không, câu trả lời dù đúng với ý trong văn bản nhưng sẽ bị tính là sai. 
+- Đọc lướt văn bản để tìm vị trí của câu trả lời, sau đó đọc chi tiết để tìm câu trả lời chính xác.
+- Có thể dự đoán các từ đồng nghĩa của các từ khóa được xác định.

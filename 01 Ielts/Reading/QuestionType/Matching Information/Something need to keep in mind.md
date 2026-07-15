@@ -1,0 +1,9 @@
+- Đôi khi một thông tin có thể được lặp lại ở nhiều đoạn văn trong một bài đọc. (VD: một đoạn văn nói về lợi ích của việc ăn uống điều độ, trong khi một đoạn văn khác nói về lợi ích của việc tập thể dục thường xuyên. Cả hai đoạn văn này đều có liên quan tới thông tin “cải thiện sức khỏe tim mạch,” nên bạn cần chú ý kỹ hơn vào những thông tin chi tiết khác trong đoạn để tránh tìm sai đáp án.
+
+- **Paraphrasing**: các thông tin trong đoạn văn thường đã được paraphrase so với câu hỏi (dùng từ đồng nghĩa hoặc các cách diễn đạt khác), điều này có thể khiến thí sinh gặp nhiều khó khăn khi làm bài. (VD: cụm “improvement in memory” trong câu hỏi được diễn đạt là “enhanced memory retention” trong đoạn văn).
+
+- **Nhầm lẫn với dạng Matching Headings**: Nhiều thí sinh chưa phân biệt giữa hai dạng bài này. Matching Headings yêu cầu người đọc tìm **nội dung chính** của đoạn, còn Matching Information yêu cầu tìm **thông tin cụ thể** trong đoạn.
+
+- Tìm thông tin dễ nhất để nối trước. Thông tin dễ xác định thường sẽ nằm trong một câu chứa các từ khóa dễ tìm thấy trong văn bản như tên, số, địa điểm và ngày tháng. Bằng cách này, người đọc sẽ nắm chắc điểm của những dễ nhất và tiết kiệm được thời gian cho các câu còn lại thay vì lãng phí nhiều thời gian cho một câu hỏi khó ngay từ đầu.
+- Có thể thu hẹp các lựa chọn bằng cách loại bỏ các thông tin không phù hợp về nghĩa. Đối với một số thông tin, sẽ có những đoạn không trùng khớp vì chủ đề mà đoạn văn đó đề cập trái ngược hoặc không liên quan, vì vậy chúng ta có thể tiến hành loại bỏ.
+- Đối với dạng bài Matching Information, bạn nên làm sau cùng khi đã hoàn thành các dạng bài khác. Khi đó bạn nắm được tương đối nội dung của bài, xác định được thông tin cần nằm ở đoạn nào và cũng giúp bạn đẩy nhanh thời gian hoàn thành bài hơn.

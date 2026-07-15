@@ -1,0 +1,3 @@
+- Dạng bài Sentence completion là dạng bài yêu cầu người đọc điền vào chỗ trống trong câu dựa trên thông tin lấy từ đoạn văn sao cho có ý nghĩa logic và đúng với nội dung của đoạn văn.
+- ![[Pasted image 20260714083121.png]]
+- - Ở dạng bài này, người đọc cần có kỹ năng xác định loại từ cần điền. Đặc biệt, người đọc chỉ được lấy từ trong đoạn văn và điền vào chỗ trống, không được điền quá số từ hay tự ý thay đổi từ ngữ.
