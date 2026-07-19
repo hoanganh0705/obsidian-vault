@@ -1,0 +1,1718 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   IELTS ACADEMIC THEME
+   A Cambridge-inspired Obsidian CSS Snippet
+   Designed for IELTS study notebooks — vocabulary, grammar, writing,
+   speaking, reading and listening components.
+
+   Architecture:
+     1. Design System (tokens: color, type, space, radius, shadow, motion)
+     2. Dark Mode Palette
+     3. Base Typography (headings, paragraphs, lists, links, code, hr)
+     4. Tables
+     5. Highlight System
+     6. Badges (Band scores)
+     7. Dividers
+     8. Card System (base + IELTS variants)
+     9. Information Boxes
+    10. Vocabulary Component
+    11. Grammar Component
+    12. Writing Component
+    13. Speaking Component
+    14. Reading Component
+    15. Listening Component
+    16. Process Diagram
+    17. Timeline
+    18. Checklist
+    19. Progress Bar
+    20. Dashboard
+    21. Image Styling
+    22. Obsidian Callouts
+    23. Responsive Rules
+    24. Utilities & Animations
+
+   Naming convention:
+     - Design tokens:      --ielts-{group}-{name}
+     - Generic components: .card, .badge, .hl, .divider, .progress
+     - IELTS variants:     .card-vocabulary, .badge-band-9, etc.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ==========================================================================
+   1. DESIGN SYSTEM
+   ========================================================================== */
+
+.markdown-preview-view,
+.markdown-source-view {
+  /* ---- Cambridge Color Palette (Light) ---------------------------------- */
+  --ielts-red-50: #fdf2f2;
+  --ielts-red-100: #fbe0e0;
+  --ielts-red-300: #e58a8a;
+  --ielts-red-500: #a6192e; /* Cambridge Red */
+  --ielts-red-600: #8c1526;
+  --ielts-red-700: #6e1120;
+
+  --ielts-blue-50: #eef4f7;
+  --ielts-blue-100: #d7e6ec;
+  --ielts-blue-300: #7fa8bb;
+  --ielts-blue-500: #2c5f7c; /* Cambridge Blue */
+  --ielts-blue-600: #234b63;
+  --ielts-blue-700: #1a394b;
+
+  --ielts-yellow-50: #fdf8ec;
+  --ielts-yellow-100: #f9edc9;
+  --ielts-yellow-300: #eeca6c;
+  --ielts-yellow-500: #dba928; /* Cambridge Yellow */
+  --ielts-yellow-600: #b6871a;
+  --ielts-yellow-700: #8f6a14;
+
+  --ielts-green-50: #eef6f0;
+  --ielts-green-100: #d3e9d8;
+  --ielts-green-300: #83bd93;
+  --ielts-green-500: #3f8a5a; /* Cambridge Green */
+  --ielts-green-600: #326e48;
+  --ielts-green-700: #275637;
+
+  --ielts-orange-50: #fdf1e9;
+  --ielts-orange-100: #fadcc4;
+  --ielts-orange-300: #f0a866;
+  --ielts-orange-500: #d97c2b;
+  --ielts-orange-600: #b06322;
+  --ielts-orange-700: #874c1b;
+
+  /* ---- Neutral Scale ----------------------------------------------------- */
+  --ielts-neutral-50: #fafaf9;
+  --ielts-neutral-100: #f2f1ee;
+  --ielts-neutral-200: #e6e4df;
+  --ielts-neutral-300: #d3d0c8;
+  --ielts-neutral-400: #b0aca1;
+  --ielts-neutral-500: #8b877c;
+  --ielts-neutral-600: #6b675d;
+  --ielts-neutral-700: #4d4a42;
+  --ielts-neutral-800: #332f28;
+  --ielts-neutral-900: #1e1c17;
+
+  /* ---- Semantic Aliases (Light Mode Default) ----------------------------- */
+  --ielts-bg-page: var(--ielts-neutral-50);
+  --ielts-bg-surface: #ffffff;
+  --ielts-bg-surface-alt: var(--ielts-neutral-100);
+  --ielts-bg-inset: var(--ielts-neutral-100);
+
+  --ielts-text-primary: var(--ielts-neutral-900);
+  --ielts-text-secondary: var(--ielts-neutral-600);
+  --ielts-text-muted: var(--ielts-neutral-500);
+  --ielts-text-inverse: #ffffff;
+
+  --ielts-border-default: var(--ielts-neutral-300);
+  --ielts-border-strong: var(--ielts-neutral-400);
+
+  --ielts-accent-primary: var(--ielts-red-500);
+  --ielts-accent-secondary: var(--ielts-blue-500);
+  --ielts-accent-tertiary: var(--ielts-yellow-500);
+
+  --ielts-link: var(--ielts-blue-500);
+  --ielts-link-hover: var(--ielts-blue-600);
+
+  --ielts-success: var(--ielts-green-500);
+  --ielts-warning: var(--ielts-yellow-600);
+  --ielts-danger: var(--ielts-red-500);
+  --ielts-info: var(--ielts-blue-500);
+
+  /* ---- Typography ---------------------------------------------------- */
+  --ielts-font-serif:
+    "Iowan Old Style", "Palatino Linotype", "Georgia", "PT Serif", serif;
+  --ielts-font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  --ielts-font-mono:
+    "SF Mono", "JetBrains Mono", "Fira Code", Consolas, monospace;
+
+  --ielts-fs-xs: 0.78em;
+  --ielts-fs-sm: 0.88em;
+  --ielts-fs-base: 1em;
+  --ielts-fs-md: 1.08em;
+  --ielts-fs-lg: 1.25em;
+  --ielts-fs-xl: 1.55em;
+  --ielts-fs-2xl: 1.95em;
+  --ielts-fs-3xl: 2.4em;
+
+  --ielts-lh-tight: 1.25;
+  --ielts-lh-normal: 1.6;
+  --ielts-lh-loose: 1.85;
+
+  --ielts-fw-regular: 400;
+  --ielts-fw-medium: 500;
+  --ielts-fw-semibold: 600;
+  --ielts-fw-bold: 700;
+
+  /* ---- Spacing Scale (4px base) ---------------------------------------- */
+  --ielts-space-1: 0.25rem;
+  --ielts-space-2: 0.5rem;
+  --ielts-space-3: 0.75rem;
+  --ielts-space-4: 1rem;
+  --ielts-space-5: 1.25rem;
+  --ielts-space-6: 1.5rem;
+  --ielts-space-8: 2rem;
+  --ielts-space-10: 2.5rem;
+  --ielts-space-12: 3rem;
+
+  /* ---- Radius ------------------------------------------------------------ */
+  --ielts-radius-sm: 6px;
+  --ielts-radius-md: 10px;
+  --ielts-radius-lg: 14px;
+  --ielts-radius-xl: 20px;
+  --ielts-radius-pill: 999px;
+
+  /* ---- Shadow ------------------------------------------------------------ */
+  --ielts-shadow-sm: 0 1px 2px rgba(30, 28, 23, 0.06);
+  --ielts-shadow-md: 0 2px 8px rgba(30, 28, 23, 0.08);
+  --ielts-shadow-lg: 0 8px 24px rgba(30, 28, 23, 0.12);
+  --ielts-shadow-inset: inset 0 0 0 1px rgba(30, 28, 23, 0.05);
+
+  /* ---- Border -------------------------------------------------------- */
+  --ielts-border-width: 1px;
+  --ielts-border-width-thick: 2px;
+
+  /* ---- Opacity ------------------------------------------------------- */
+  --ielts-opacity-disabled: 0.5;
+  --ielts-opacity-hover: 0.85;
+  --ielts-opacity-subtle: 0.08;
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --ielts-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ielts-duration-fast: 120ms;
+  --ielts-duration-base: 200ms;
+  --ielts-duration-slow: 320ms;
+
+  /* ---- Layout ------------------------------------------------------------ */
+  --ielts-content-width: 720px;
+  --ielts-z-sticky: 10;
+  --ielts-z-overlay: 100;
+}
+
+/* ==========================================================================
+   2. DARK MODE PALETTE
+   Not an inversion — a dedicated warm, low-contrast academic dark theme.
+   ========================================================================== */
+
+.theme-dark .markdown-preview-view,
+.theme-dark .markdown-source-view {
+  --ielts-red-50: #2b1416;
+  --ielts-red-100: #3d1a1e;
+  --ielts-red-300: #a4444f;
+  --ielts-red-500: #d9707c;
+  --ielts-red-600: #e8919a;
+  --ielts-red-700: #f2b3ba;
+
+  --ielts-blue-50: #10191e;
+  --ielts-blue-100: #16232b;
+  --ielts-blue-300: #3f6b82;
+  --ielts-blue-500: #7fb2cf;
+  --ielts-blue-600: #9fc6de;
+  --ielts-blue-700: #c0dbea;
+
+  --ielts-yellow-50: #211a0c;
+  --ielts-yellow-100: #2f2510;
+  --ielts-yellow-300: #8a6a25;
+  --ielts-yellow-500: #e0b84f;
+  --ielts-yellow-600: #ecc975;
+  --ielts-yellow-700: #f5dda2;
+
+  --ielts-green-50: #101d15;
+  --ielts-green-100: #16281c;
+  --ielts-green-300: #3d6b4c;
+  --ielts-green-500: #74b98c;
+  --ielts-green-600: #96caa8;
+  --ielts-green-700: #b8dbc4;
+
+  --ielts-orange-50: #22160c;
+  --ielts-orange-100: #331f10;
+  --ielts-orange-300: #8f5a29;
+  --ielts-orange-500: #e2a05c;
+  --ielts-orange-600: #ecb77e;
+  --ielts-orange-700: #f4cea3;
+
+  --ielts-neutral-50: #15140f;
+  --ielts-neutral-100: #1c1a15;
+  --ielts-neutral-200: #26241d;
+  --ielts-neutral-300: #35322a;
+  --ielts-neutral-400: #4c4839;
+  --ielts-neutral-500: #6f6a58;
+  --ielts-neutral-600: #948e7a;
+  --ielts-neutral-700: #b7b09b;
+  --ielts-neutral-800: #d9d3c1;
+  --ielts-neutral-900: #f1ede0;
+
+  --ielts-bg-page: #15140f;
+  --ielts-bg-surface: #1c1a15;
+  --ielts-bg-surface-alt: #221f18;
+  --ielts-bg-inset: #221f18;
+
+  --ielts-text-primary: #f1ede0;
+  --ielts-text-secondary: #b7b09b;
+  --ielts-text-muted: #948e7a;
+  --ielts-text-inverse: #15140f;
+
+  --ielts-border-default: #35322a;
+  --ielts-border-strong: #4c4839;
+
+  --ielts-accent-primary: var(--ielts-red-500);
+  --ielts-accent-secondary: var(--ielts-blue-500);
+  --ielts-accent-tertiary: var(--ielts-yellow-500);
+
+  --ielts-link: var(--ielts-blue-500);
+  --ielts-link-hover: var(--ielts-blue-600);
+
+  --ielts-success: var(--ielts-green-500);
+  --ielts-warning: var(--ielts-yellow-500);
+  --ielts-danger: var(--ielts-red-500);
+  --ielts-info: var(--ielts-blue-500);
+
+  --ielts-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --ielts-shadow-md: 0 2px 10px rgba(0, 0, 0, 0.4);
+  --ielts-shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.5);
+  --ielts-shadow-inset: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* ==========================================================================
+   3. BASE TYPOGRAPHY
+   ========================================================================== */
+
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-line {
+  font-family: var(--ielts-font-serif);
+  color: var(--ielts-text-primary);
+  line-height: var(--ielts-lh-normal);
+  letter-spacing: 0.1px;
+}
+
+.markdown-preview-view {
+  background-color: var(--ielts-bg-page);
+}
+
+.markdown-preview-view .markdown-preview-sizer {
+  max-width: var(--ielts-content-width);
+}
+
+/* ---- Headings ------------------------------------------------------------ */
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  font-family: var(--ielts-font-sans);
+  font-weight: var(--ielts-fw-semibold);
+  line-height: var(--ielts-lh-tight);
+  color: var(--ielts-text-primary);
+  margin-top: var(--ielts-space-10);
+  margin-bottom: var(--ielts-space-4);
+  scroll-margin-top: var(--ielts-space-8);
+}
+
+.markdown-preview-view h1 {
+  font-size: var(--ielts-fs-3xl);
+  font-weight: var(--ielts-fw-bold);
+  border-bottom: var(--ielts-border-width-thick) solid
+    var(--ielts-accent-primary);
+  padding-bottom: var(--ielts-space-3);
+  letter-spacing: -0.02em;
+}
+
+.markdown-preview-view h2 {
+  font-size: var(--ielts-fs-2xl);
+  border-bottom: var(--ielts-border-width) solid var(--ielts-border-default);
+  padding-bottom: var(--ielts-space-2);
+  letter-spacing: -0.01em;
+}
+
+.markdown-preview-view h2::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: var(--ielts-space-2);
+  border-radius: var(--ielts-radius-pill);
+  background: var(--ielts-accent-secondary);
+  vertical-align: middle;
+}
+
+.markdown-preview-view h3 {
+  font-size: var(--ielts-fs-xl);
+  color: var(--ielts-blue-600);
+}
+
+.markdown-preview-view h4 {
+  font-size: var(--ielts-fs-lg);
+  color: var(--ielts-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--ielts-fs-md);
+  font-weight: var(--ielts-fw-bold);
+  opacity: 0.85;
+}
+
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  font-size: var(--ielts-fs-base);
+  color: var(--ielts-text-secondary);
+}
+
+/* ---- Paragraphs ----------------------------------------------------------- */
+
+.markdown-preview-view p {
+  margin: var(--ielts-space-4) 0;
+  font-size: var(--ielts-fs-base);
+}
+
+/* ---- Lists ------------------------------------------------------------- */
+
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+  padding-left: var(--ielts-space-6);
+  margin: var(--ielts-space-3) 0;
+}
+
+.markdown-preview-view li {
+  margin: var(--ielts-space-1) 0;
+  line-height: var(--ielts-lh-normal);
+}
+
+.markdown-preview-view li::marker {
+  color: var(--ielts-accent-secondary);
+  font-weight: var(--ielts-fw-semibold);
+}
+
+.markdown-preview-view ul ul,
+.markdown-preview-view ol ol,
+.markdown-preview-view ul ol,
+.markdown-preview-view ol ul {
+  margin: var(--ielts-space-1) 0;
+}
+
+/* ---- Links --------------------------------------------------------------- */
+
+.markdown-preview-view a {
+  color: var(--ielts-link);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color var(--ielts-duration-fast) var(--ielts-ease),
+    color var(--ielts-duration-fast) var(--ielts-ease);
+}
+
+.markdown-preview-view a:hover {
+  color: var(--ielts-link-hover);
+  border-bottom-color: currentColor;
+}
+
+.markdown-preview-view .internal-link {
+  color: var(--ielts-accent-primary);
+  border-bottom: 1px dashed var(--ielts-red-300);
+}
+
+/* ---- Inline Code & Code Blocks --------------------------------------------- */
+
+.markdown-preview-view code {
+  font-family: var(--ielts-font-mono);
+  font-size: 0.85em;
+  background: var(--ielts-bg-inset);
+  color: var(--ielts-red-600);
+  padding: 0.12em 0.4em;
+  border-radius: var(--ielts-radius-sm);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+}
+
+.markdown-preview-view pre {
+  background: var(--ielts-bg-inset);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-radius: var(--ielts-radius-md);
+  padding: var(--ielts-space-4);
+  box-shadow: var(--ielts-shadow-sm);
+  overflow-x: auto;
+}
+
+.markdown-preview-view pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--ielts-text-primary);
+}
+
+/* ---- Blockquotes --------------------------------------------------------- */
+
+.markdown-preview-view blockquote {
+  margin: var(--ielts-space-5) 0;
+  padding: var(--ielts-space-3) var(--ielts-space-5);
+  background: var(--ielts-blue-50);
+  border-left: var(--ielts-border-width-thick) solid
+    var(--ielts-accent-secondary);
+  border-radius: 0 var(--ielts-radius-sm) var(--ielts-radius-sm) 0;
+  color: var(--ielts-text-secondary);
+  font-style: italic;
+}
+
+.markdown-preview-view blockquote p {
+  margin: var(--ielts-space-2) 0;
+}
+
+/* ---- Horizontal Rules ------------------------------------------------------ */
+
+.markdown-preview-view hr {
+  border: none;
+  height: var(--ielts-border-width-thick);
+  margin: var(--ielts-space-8) 0;
+  background: linear-gradient(
+    to right,
+    var(--ielts-accent-primary),
+    var(--ielts-accent-secondary)
+  );
+  border-radius: var(--ielts-radius-pill);
+  opacity: 0.6;
+}
+
+/* ---- Captions -------------------------------------------------------------- */
+
+.markdown-preview-view em {
+  color: var(--ielts-text-secondary);
+}
+
+.markdown-preview-view figcaption,
+.markdown-preview-view .image-caption {
+  text-align: center;
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-xs);
+  color: var(--ielts-text-muted);
+  margin-top: var(--ielts-space-2);
+}
+
+/* ==========================================================================
+   4. TABLES
+   ========================================================================== */
+
+.markdown-preview-view table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: var(--ielts-space-6) 0;
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-sm);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-radius: var(--ielts-radius-md);
+  overflow: hidden;
+  box-shadow: var(--ielts-shadow-sm);
+}
+
+.markdown-preview-view thead {
+  position: sticky;
+  top: 0;
+  z-index: var(--ielts-z-sticky);
+}
+
+.markdown-preview-view th {
+  background: var(--ielts-blue-500);
+  color: var(--ielts-text-inverse);
+  font-weight: var(--ielts-fw-semibold);
+  text-align: left;
+  padding: var(--ielts-space-3) var(--ielts-space-4);
+  letter-spacing: 0.02em;
+}
+
+.markdown-preview-view td {
+  padding: var(--ielts-space-3) var(--ielts-space-4);
+  border-top: var(--ielts-border-width) solid var(--ielts-border-default);
+  vertical-align: top;
+}
+
+.markdown-preview-view tbody tr {
+  background: var(--ielts-bg-surface);
+  transition: background var(--ielts-duration-fast) var(--ielts-ease);
+}
+
+.markdown-preview-view tbody tr:nth-child(even) {
+  background: var(--ielts-bg-surface-alt);
+}
+
+.markdown-preview-view tbody tr:hover {
+  background: var(--ielts-yellow-50);
+}
+
+/* First column optimized for Band scores */
+.markdown-preview-view td:first-child {
+  font-weight: var(--ielts-fw-semibold);
+  color: var(--ielts-blue-600);
+  white-space: nowrap;
+}
+
+.markdown-preview-view table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   5. HIGHLIGHT SYSTEM
+   ========================================================================== */
+
+.markdown-preview-view mark,
+.hl {
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.05em 0.35em;
+  border-radius: var(--ielts-radius-sm);
+  font-weight: var(--ielts-fw-medium);
+}
+
+.markdown-preview-view mark,
+.hl,
+.hl-primary {
+  background: var(--ielts-yellow-100);
+  color: var(--ielts-yellow-700);
+}
+
+.hl-warning {
+  background: var(--ielts-orange-100);
+  color: var(--ielts-orange-700);
+}
+
+.hl-success {
+  background: var(--ielts-green-100);
+  color: var(--ielts-green-700);
+}
+
+.hl-danger {
+  background: var(--ielts-red-100);
+  color: var(--ielts-red-700);
+}
+
+.hl-secondary {
+  background: var(--ielts-blue-100);
+  color: var(--ielts-blue-700);
+}
+
+/* ==========================================================================
+   6. BADGES
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ielts-space-1);
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-xs);
+  font-weight: var(--ielts-fw-bold);
+  padding: 0.2em 0.7em;
+  border-radius: var(--ielts-radius-pill);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+
+.badge-primary {
+  background: var(--ielts-red-100);
+  color: var(--ielts-red-700);
+}
+.badge-secondary {
+  background: var(--ielts-blue-100);
+  color: var(--ielts-blue-700);
+}
+.badge-success {
+  background: var(--ielts-green-100);
+  color: var(--ielts-green-700);
+}
+.badge-warning {
+  background: var(--ielts-yellow-100);
+  color: var(--ielts-yellow-700);
+}
+.badge-danger {
+  background: var(--ielts-red-100);
+  color: var(--ielts-red-700);
+}
+.badge-neutral {
+  background: var(--ielts-neutral-200);
+  color: var(--ielts-neutral-700);
+}
+
+/* ---- Band Score Badges --------------------------------------------------- */
+
+.badge-band-9 {
+  background: var(--ielts-green-500);
+  color: var(--ielts-text-inverse);
+}
+.badge-band-8 {
+  background: var(--ielts-green-300);
+  color: var(--ielts-green-700);
+}
+.badge-band-7 {
+  background: var(--ielts-blue-300);
+  color: var(--ielts-blue-700);
+}
+.badge-band-6 {
+  background: var(--ielts-yellow-300);
+  color: var(--ielts-yellow-700);
+}
+.badge-band-5 {
+  background: var(--ielts-orange-300);
+  color: var(--ielts-orange-700);
+}
+
+/* ==========================================================================
+   7. DIVIDERS
+   ========================================================================== */
+
+.divider {
+  border: none;
+  height: var(--ielts-border-width-thick);
+  margin: var(--ielts-space-6) 0;
+  border-radius: var(--ielts-radius-pill);
+}
+
+.divider-red {
+  background: var(--ielts-accent-primary);
+}
+.divider-blue {
+  background: var(--ielts-accent-secondary);
+}
+.divider-gradient {
+  background: linear-gradient(
+    to right,
+    var(--ielts-accent-primary),
+    var(--ielts-accent-tertiary),
+    var(--ielts-accent-secondary)
+  );
+}
+.divider-thin {
+  height: var(--ielts-border-width);
+  opacity: 0.6;
+}
+.divider-thick {
+  height: 4px;
+}
+
+/* ==========================================================================
+   8. CARD SYSTEM
+   Single reusable layout. Variants only override color accents.
+   ========================================================================== */
+
+.card {
+  --card-accent: var(--ielts-accent-secondary);
+  --card-accent-bg: var(--ielts-blue-50);
+
+  background: var(--ielts-bg-surface);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-left: var(--ielts-border-width-thick) solid var(--card-accent);
+  border-radius: var(--ielts-radius-lg);
+  padding: var(--ielts-space-5);
+  margin: var(--ielts-space-5) 0;
+  box-shadow: var(--ielts-shadow-sm);
+  transition:
+    box-shadow var(--ielts-duration-base) var(--ielts-ease),
+    transform var(--ielts-duration-base) var(--ielts-ease);
+}
+
+.card:hover {
+  box-shadow: var(--ielts-shadow-md);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--ielts-space-2);
+  margin-bottom: var(--ielts-space-3);
+}
+
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: var(--ielts-radius-sm);
+  background: var(--card-accent-bg);
+  color: var(--card-accent);
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-family: var(--ielts-font-sans);
+  font-weight: var(--ielts-fw-semibold);
+  font-size: var(--ielts-fs-md);
+  color: var(--ielts-text-primary);
+  margin: 0;
+}
+
+.card-subtitle {
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-xs);
+  color: var(--ielts-text-muted);
+  margin: 0;
+}
+
+.card-body {
+  color: var(--ielts-text-secondary);
+  font-size: var(--ielts-fs-base);
+}
+
+.card-body > *:first-child {
+  margin-top: 0;
+}
+.card-body > *:last-child {
+  margin-bottom: 0;
+}
+
+.card-footer {
+  margin-top: var(--ielts-space-4);
+  padding-top: var(--ielts-space-3);
+  border-top: var(--ielts-border-width) solid var(--ielts-border-default);
+  font-size: var(--ielts-fs-xs);
+  color: var(--ielts-text-muted);
+}
+
+.card-actions {
+  display: flex;
+  gap: var(--ielts-space-2);
+  margin-top: var(--ielts-space-3);
+}
+
+/* ---- IELTS Card Variants (color overrides only) --------------------------- */
+
+.card-vocabulary {
+  --card-accent: var(--ielts-blue-500);
+  --card-accent-bg: var(--ielts-blue-50);
+}
+.card-grammar {
+  --card-accent: var(--ielts-green-500);
+  --card-accent-bg: var(--ielts-green-50);
+}
+.card-writing {
+  --card-accent: var(--ielts-red-500);
+  --card-accent-bg: var(--ielts-red-50);
+}
+.card-speaking {
+  --card-accent: var(--ielts-orange-500);
+  --card-accent-bg: var(--ielts-orange-50);
+}
+.card-reading {
+  --card-accent: var(--ielts-yellow-600);
+  --card-accent-bg: var(--ielts-yellow-50);
+}
+.card-listening {
+  --card-accent: var(--ielts-blue-600);
+  --card-accent-bg: var(--ielts-blue-50);
+}
+.card-example {
+  --card-accent: var(--ielts-neutral-500);
+  --card-accent-bg: var(--ielts-neutral-100);
+}
+.card-warning {
+  --card-accent: var(--ielts-orange-500);
+  --card-accent-bg: var(--ielts-orange-50);
+}
+.card-danger {
+  --card-accent: var(--ielts-red-500);
+  --card-accent-bg: var(--ielts-red-50);
+}
+.card-success {
+  --card-accent: var(--ielts-green-500);
+  --card-accent-bg: var(--ielts-green-50);
+}
+
+/* ==========================================================================
+   9. INFORMATION BOXES
+   ========================================================================== */
+
+.info-box,
+.tip-box,
+.success-box,
+.warning-box,
+.mistake-box,
+.example-box,
+.grammar-box,
+.vocabulary-box {
+  --box-accent: var(--ielts-blue-500);
+  --box-bg: var(--ielts-blue-50);
+
+  position: relative;
+  background: var(--box-bg);
+  border: var(--ielts-border-width) solid var(--box-accent);
+  border-radius: var(--ielts-radius-md);
+  padding: var(--ielts-space-4) var(--ielts-space-5) var(--ielts-space-4)
+    var(--ielts-space-12);
+  margin: var(--ielts-space-5) 0;
+  font-size: var(--ielts-fs-sm);
+  color: var(--ielts-text-secondary);
+}
+
+.info-box::before,
+.tip-box::before,
+.success-box::before,
+.warning-box::before,
+.mistake-box::before,
+.example-box::before,
+.grammar-box::before,
+.vocabulary-box::before {
+  position: absolute;
+  left: var(--ielts-space-4);
+  top: var(--ielts-space-4);
+  font-size: var(--ielts-fs-md);
+  line-height: 1;
+}
+
+.info-box {
+  --box-accent: var(--ielts-blue-500);
+  --box-bg: var(--ielts-blue-50);
+}
+.info-box::before {
+  content: "ℹ";
+  color: var(--ielts-blue-500);
+}
+
+.tip-box {
+  --box-accent: var(--ielts-yellow-500);
+  --box-bg: var(--ielts-yellow-50);
+}
+.tip-box::before {
+  content: "💡";
+}
+
+.success-box {
+  --box-accent: var(--ielts-green-500);
+  --box-bg: var(--ielts-green-50);
+}
+.success-box::before {
+  content: "✓";
+  color: var(--ielts-green-500);
+  font-weight: var(--ielts-fw-bold);
+}
+
+.warning-box {
+  --box-accent: var(--ielts-orange-500);
+  --box-bg: var(--ielts-orange-50);
+}
+.warning-box::before {
+  content: "⚠";
+  color: var(--ielts-orange-500);
+}
+
+.mistake-box {
+  --box-accent: var(--ielts-red-500);
+  --box-bg: var(--ielts-red-50);
+}
+.mistake-box::before {
+  content: "✕";
+  color: var(--ielts-red-500);
+  font-weight: var(--ielts-fw-bold);
+}
+
+.example-box {
+  --box-accent: var(--ielts-neutral-500);
+  --box-bg: var(--ielts-neutral-100);
+}
+.example-box::before {
+  content: "❝";
+  color: var(--ielts-neutral-600);
+}
+
+.grammar-box {
+  --box-accent: var(--ielts-green-600);
+  --box-bg: var(--ielts-green-50);
+}
+.grammar-box::before {
+  content: "✎";
+  color: var(--ielts-green-600);
+}
+
+.vocabulary-box {
+  --box-accent: var(--ielts-blue-600);
+  --box-bg: var(--ielts-blue-50);
+}
+.vocabulary-box::before {
+  content: "🔤";
+}
+
+.info-box p,
+.tip-box p,
+.success-box p,
+.warning-box p,
+.mistake-box p,
+.example-box p,
+.grammar-box p,
+.vocabulary-box p {
+  margin: var(--ielts-space-1) 0;
+}
+
+/* ==========================================================================
+   10. VOCABULARY COMPONENT
+   ========================================================================== */
+
+.vocab-card {
+  background: var(--ielts-bg-surface);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-radius: var(--ielts-radius-lg);
+  padding: var(--ielts-space-5);
+  margin: var(--ielts-space-5) 0;
+  box-shadow: var(--ielts-shadow-sm);
+}
+
+.vocab-word {
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-lg);
+  font-weight: var(--ielts-fw-bold);
+  color: var(--ielts-blue-600);
+  display: flex;
+  align-items: baseline;
+  gap: var(--ielts-space-2);
+  flex-wrap: wrap;
+}
+
+.vocab-ipa {
+  font-family: var(--ielts-font-serif);
+  font-style: italic;
+  font-size: var(--ielts-fs-sm);
+  color: var(--ielts-text-muted);
+}
+
+.vocab-difficulty {
+  margin-left: auto;
+}
+
+.vocab-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--ielts-space-2) var(--ielts-space-4);
+  margin-top: var(--ielts-space-4);
+  font-size: var(--ielts-fs-sm);
+}
+
+.vocab-grid dt {
+  font-family: var(--ielts-font-sans);
+  font-weight: var(--ielts-fw-semibold);
+  color: var(--ielts-text-muted);
+  text-transform: uppercase;
+  font-size: var(--ielts-fs-xs);
+  letter-spacing: 0.04em;
+  padding-top: 0.2em;
+}
+
+.vocab-grid dd {
+  margin: 0;
+  color: var(--ielts-text-primary);
+}
+
+.vocab-meaning {
+}
+.vocab-collocation {
+  color: var(--ielts-blue-600);
+}
+.vocab-word-family {
+  display: flex;
+  gap: var(--ielts-space-2);
+  flex-wrap: wrap;
+}
+.vocab-synonym {
+  color: var(--ielts-green-600);
+}
+.vocab-antonym {
+  color: var(--ielts-red-600);
+}
+.vocab-example {
+  font-style: italic;
+  border-left: 2px solid var(--ielts-border-default);
+  padding-left: var(--ielts-space-3);
+}
+.vocab-notes {
+  color: var(--ielts-text-muted);
+  font-size: var(--ielts-fs-xs);
+}
+
+/* ==========================================================================
+   11. GRAMMAR COMPONENT
+   ========================================================================== */
+
+.grammar-card {
+  background: var(--ielts-bg-surface);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-top: var(--ielts-border-width-thick) solid var(--ielts-green-500);
+  border-radius: var(--ielts-radius-lg);
+  padding: var(--ielts-space-5);
+  margin: var(--ielts-space-5) 0;
+  box-shadow: var(--ielts-shadow-sm);
+}
+
+.grammar-rule {
+  font-family: var(--ielts-font-sans);
+  font-weight: var(--ielts-fw-semibold);
+  font-size: var(--ielts-fs-md);
+  color: var(--ielts-green-700);
+  margin-bottom: var(--ielts-space-2);
+}
+
+.grammar-structure {
+  font-family: var(--ielts-font-mono);
+  background: var(--ielts-bg-inset);
+  border: var(--ielts-border-width) dashed var(--ielts-border-strong);
+  border-radius: var(--ielts-radius-sm);
+  padding: var(--ielts-space-2) var(--ielts-space-3);
+  margin: var(--ielts-space-2) 0;
+  font-size: var(--ielts-fs-sm);
+  color: var(--ielts-text-primary);
+}
+
+.grammar-usage {
+  color: var(--ielts-text-secondary);
+  margin: var(--ielts-space-2) 0;
+}
+
+.grammar-examples {
+  border-left: 2px solid var(--ielts-green-300);
+  padding-left: var(--ielts-space-3);
+  margin: var(--ielts-space-2) 0;
+}
+
+.grammar-mistake {
+  background: var(--ielts-red-50);
+  border: var(--ielts-border-width) solid var(--ielts-red-300);
+  border-radius: var(--ielts-radius-sm);
+  padding: var(--ielts-space-2) var(--ielts-space-3);
+  color: var(--ielts-red-700);
+  font-size: var(--ielts-fs-sm);
+  margin-top: var(--ielts-space-2);
+}
+
+.grammar-notes {
+  font-size: var(--ielts-fs-xs);
+  color: var(--ielts-text-muted);
+  margin-top: var(--ielts-space-2);
+}
+
+/* ==========================================================================
+   12. WRITING COMPONENT
+   ========================================================================== */
+
+.writing-card {
+  background: var(--ielts-bg-surface);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-top: var(--ielts-border-width-thick) solid var(--ielts-red-500);
+  border-radius: var(--ielts-radius-lg);
+  padding: var(--ielts-space-5);
+  margin: var(--ielts-space-5) 0;
+  box-shadow: var(--ielts-shadow-sm);
+}
+
+.writing-overview {
+  font-style: italic;
+  color: var(--ielts-text-secondary);
+  border-bottom: var(--ielts-border-width) solid var(--ielts-border-default);
+  padding-bottom: var(--ielts-space-3);
+  margin-bottom: var(--ielts-space-3);
+}
+
+.writing-key-features ul {
+  margin: var(--ielts-space-1) 0;
+}
+
+.writing-body-paragraph {
+  background: var(--ielts-bg-inset);
+  border-radius: var(--ielts-radius-sm);
+  padding: var(--ielts-space-3) var(--ielts-space-4);
+  margin: var(--ielts-space-3) 0;
+}
+
+.writing-vocabulary {
+  color: var(--ielts-blue-600);
+}
+
+.writing-mistakes {
+  background: var(--ielts-red-50);
+  border-left: var(--ielts-border-width-thick) solid var(--ielts-red-500);
+  padding: var(--ielts-space-2) var(--ielts-space-3);
+  border-radius: 0 var(--ielts-radius-sm) var(--ielts-radius-sm) 0;
+}
+
+.writing-band-notes {
+  background: var(--ielts-yellow-50);
+  border-radius: var(--ielts-radius-sm);
+  padding: var(--ielts-space-2) var(--ielts-space-3);
+  font-size: var(--ielts-fs-sm);
+  margin-top: var(--ielts-space-2);
+}
+
+/* ==========================================================================
+   13. SPEAKING COMPONENT
+   ========================================================================== */
+
+.speaking-card {
+  background: var(--ielts-bg-surface);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-top: var(--ielts-border-width-thick) solid var(--ielts-orange-500);
+  border-radius: var(--ielts-radius-lg);
+  padding: var(--ielts-space-5);
+  margin: var(--ielts-space-5) 0;
+  box-shadow: var(--ielts-shadow-sm);
+}
+
+.speaking-question {
+  font-family: var(--ielts-font-sans);
+  font-weight: var(--ielts-fw-semibold);
+  color: var(--ielts-orange-700);
+  margin-bottom: var(--ielts-space-3);
+}
+
+.speaking-ideas ul,
+.speaking-expressions ul {
+  margin: var(--ielts-space-1) 0;
+}
+
+.speaking-expressions {
+  background: var(--ielts-orange-50);
+  border-radius: var(--ielts-radius-sm);
+  padding: var(--ielts-space-3);
+  margin: var(--ielts-space-2) 0;
+}
+
+.speaking-band-tips {
+  font-size: var(--ielts-fs-sm);
+  color: var(--ielts-text-muted);
+}
+
+.speaking-mistakes {
+  color: var(--ielts-red-600);
+  font-size: var(--ielts-fs-sm);
+}
+
+/* ==========================================================================
+   14. READING COMPONENT
+   ========================================================================== */
+
+.reading-card {
+  background: var(--ielts-bg-surface);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-top: var(--ielts-border-width-thick) solid var(--ielts-yellow-600);
+  border-radius: var(--ielts-radius-lg);
+  padding: var(--ielts-space-5);
+  margin: var(--ielts-space-5) 0;
+  box-shadow: var(--ielts-shadow-sm);
+}
+
+.reading-question {
+  font-weight: var(--ielts-fw-semibold);
+  margin-bottom: var(--ielts-space-2);
+}
+
+.reading-answer {
+  display: inline-block;
+  background: var(--ielts-green-100);
+  color: var(--ielts-green-700);
+  padding: 0.15em 0.6em;
+  border-radius: var(--ielts-radius-sm);
+  font-weight: var(--ielts-fw-semibold);
+}
+
+.reading-explanation {
+  color: var(--ielts-text-secondary);
+  margin-top: var(--ielts-space-2);
+}
+
+.reading-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ielts-space-2);
+  margin-top: var(--ielts-space-2);
+}
+.reading-keywords span {
+  background: var(--ielts-yellow-100);
+  color: var(--ielts-yellow-700);
+  padding: 0.1em 0.5em;
+  border-radius: var(--ielts-radius-sm);
+  font-size: var(--ielts-fs-xs);
+}
+
+.reading-skimming,
+.reading-scanning {
+  font-size: var(--ielts-fs-xs);
+  color: var(--ielts-text-muted);
+  margin-top: var(--ielts-space-1);
+}
+
+/* ==========================================================================
+   15. LISTENING COMPONENT
+   ========================================================================== */
+
+.listening-card {
+  background: var(--ielts-bg-surface);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-top: var(--ielts-border-width-thick) solid var(--ielts-blue-600);
+  border-radius: var(--ielts-radius-lg);
+  padding: var(--ielts-space-5);
+  margin: var(--ielts-space-5) 0;
+  box-shadow: var(--ielts-shadow-sm);
+}
+
+.listening-prediction {
+  color: var(--ielts-blue-600);
+  font-style: italic;
+}
+
+.listening-distractor {
+  background: var(--ielts-red-50);
+  color: var(--ielts-red-700);
+  border-radius: var(--ielts-radius-sm);
+  padding: var(--ielts-space-2) var(--ielts-space-3);
+  margin: var(--ielts-space-2) 0;
+  font-size: var(--ielts-fs-sm);
+}
+
+.listening-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ielts-space-2);
+}
+.listening-keywords span {
+  background: var(--ielts-blue-100);
+  color: var(--ielts-blue-700);
+  padding: 0.1em 0.5em;
+  border-radius: var(--ielts-radius-sm);
+  font-size: var(--ielts-fs-xs);
+}
+
+.listening-transcript {
+  font-family: var(--ielts-font-mono);
+  font-size: var(--ielts-fs-xs);
+  background: var(--ielts-bg-inset);
+  border-radius: var(--ielts-radius-sm);
+  padding: var(--ielts-space-3);
+  margin-top: var(--ielts-space-2);
+  color: var(--ielts-text-secondary);
+  white-space: pre-wrap;
+}
+
+.listening-answer {
+  display: inline-block;
+  background: var(--ielts-green-100);
+  color: var(--ielts-green-700);
+  padding: 0.15em 0.6em;
+  border-radius: var(--ielts-radius-sm);
+  font-weight: var(--ielts-fw-semibold);
+}
+
+/* ==========================================================================
+   16. PROCESS DIAGRAM
+   ========================================================================== */
+
+.process-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ielts-space-2);
+  margin: var(--ielts-space-6) 0;
+}
+
+.process-step {
+  background: var(--ielts-bg-surface);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-radius: var(--ielts-radius-md);
+  padding: var(--ielts-space-3) var(--ielts-space-4);
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-sm);
+  box-shadow: var(--ielts-shadow-sm);
+  position: relative;
+}
+
+.process-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: var(--ielts-radius-pill);
+  background: var(--ielts-accent-secondary);
+  color: var(--ielts-text-inverse);
+  font-weight: var(--ielts-fw-bold);
+  font-size: var(--ielts-fs-xs);
+  margin-right: var(--ielts-space-2);
+}
+
+.process-arrow {
+  color: var(--ielts-text-muted);
+  font-size: var(--ielts-fs-lg);
+  flex-shrink: 0;
+}
+
+.process-arrow::before {
+  content: "→";
+}
+
+/* ==========================================================================
+   17. TIMELINE
+   ========================================================================== */
+
+.timeline {
+  position: relative;
+  margin: var(--ielts-space-6) 0;
+  padding-left: var(--ielts-space-8);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--ielts-border-default);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--ielts-space-5);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--ielts-space-8) + 3px);
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--ielts-radius-pill);
+  background: var(--ielts-accent-secondary);
+  border: 2px solid var(--ielts-bg-surface);
+  box-shadow: 0 0 0 2px var(--ielts-accent-secondary);
+}
+
+.timeline-date {
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-xs);
+  color: var(--ielts-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.timeline-title {
+  font-weight: var(--ielts-fw-semibold);
+  color: var(--ielts-text-primary);
+}
+
+/* ==========================================================================
+   18. CHECKLIST
+   ========================================================================== */
+
+.markdown-preview-view .task-list-item {
+  list-style: none;
+  margin: var(--ielts-space-2) 0;
+}
+
+.markdown-preview-view .task-list-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.1em;
+  height: 1.1em;
+  border: var(--ielts-border-width-thick) solid var(--ielts-border-strong);
+  border-radius: var(--ielts-radius-sm);
+  margin-right: var(--ielts-space-2);
+  position: relative;
+  cursor: pointer;
+  transition:
+    background var(--ielts-duration-fast) var(--ielts-ease),
+    border-color var(--ielts-duration-fast) var(--ielts-ease);
+  vertical-align: middle;
+}
+
+.markdown-preview-view .task-list-item input[type="checkbox"]:checked {
+  background: var(--ielts-success);
+  border-color: var(--ielts-success);
+}
+
+.markdown-preview-view .task-list-item input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  color: var(--ielts-text-inverse);
+  font-size: 0.75em;
+  font-weight: var(--ielts-fw-bold);
+}
+
+.markdown-preview-view .task-list-item.is-checked > span,
+.markdown-preview-view li.task-list-item[data-task="x"] {
+  color: var(--ielts-text-muted);
+  text-decoration: line-through;
+}
+
+/* ==========================================================================
+   19. PROGRESS BAR
+   ========================================================================== */
+
+.progress {
+  width: 100%;
+  height: 10px;
+  background: var(--ielts-bg-inset);
+  border-radius: var(--ielts-radius-pill);
+  overflow: hidden;
+  margin: var(--ielts-space-2) 0;
+  box-shadow: var(--ielts-shadow-inset);
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: var(--ielts-radius-pill);
+  background: linear-gradient(
+    to right,
+    var(--ielts-blue-500),
+    var(--ielts-green-500)
+  );
+  transition: width var(--ielts-duration-slow) var(--ielts-ease);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-xs);
+  color: var(--ielts-text-muted);
+  margin-bottom: var(--ielts-space-1);
+}
+
+/* Score-based color variants */
+.progress-bar.is-low {
+  background: var(--ielts-red-500);
+}
+.progress-bar.is-medium {
+  background: var(--ielts-yellow-500);
+}
+.progress-bar.is-high {
+  background: var(--ielts-green-500);
+}
+
+/* ==========================================================================
+   20. DASHBOARD
+   ========================================================================== */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--ielts-space-4);
+  margin: var(--ielts-space-6) 0;
+}
+
+.dashboard-card {
+  background: var(--ielts-bg-surface);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  border-radius: var(--ielts-radius-lg);
+  padding: var(--ielts-space-4);
+  box-shadow: var(--ielts-shadow-sm);
+  text-align: center;
+}
+
+.dashboard-stat {
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-2xl);
+  font-weight: var(--ielts-fw-bold);
+  color: var(--ielts-blue-600);
+  line-height: 1;
+}
+
+.dashboard-label {
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-fs-xs);
+  color: var(--ielts-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: var(--ielts-space-2);
+}
+
+.dashboard-summary {
+  grid-column: 1 / -1;
+  background: var(--ielts-blue-50);
+  border-radius: var(--ielts-radius-lg);
+  padding: var(--ielts-space-4);
+  font-size: var(--ielts-fs-sm);
+  color: var(--ielts-text-secondary);
+}
+
+/* ==========================================================================
+   21. IMAGE STYLING
+   ========================================================================== */
+
+.markdown-preview-view img {
+  max-width: 100%;
+  border-radius: var(--ielts-radius-md);
+  box-shadow: var(--ielts-shadow-md);
+  border: var(--ielts-border-width) solid var(--ielts-border-default);
+  display: block;
+  margin: var(--ielts-space-5) auto;
+  transition: transform var(--ielts-duration-base) var(--ielts-ease);
+}
+
+.markdown-preview-view .image-embed {
+  text-align: center;
+}
+
+/* ==========================================================================
+   22. OBSIDIAN CALLOUTS
+   ========================================================================== */
+
+.markdown-preview-view .callout {
+  border-radius: var(--ielts-radius-md);
+  border: var(--ielts-border-width) solid
+    var(--callout-accent, var(--ielts-border-default));
+  background: var(--callout-bg, var(--ielts-bg-surface-alt));
+  padding: var(--ielts-space-1) var(--ielts-space-2);
+  margin: var(--ielts-space-5) 0;
+}
+
+.markdown-preview-view .callout-title {
+  font-family: var(--ielts-font-sans);
+  font-weight: var(--ielts-fw-semibold);
+}
+
+.markdown-preview-view .callout[data-callout="grammar"] {
+  --callout-accent: var(--ielts-green-500);
+  --callout-bg: var(--ielts-green-50);
+}
+
+.markdown-preview-view .callout[data-callout="vocabulary"] {
+  --callout-accent: var(--ielts-blue-500);
+  --callout-bg: var(--ielts-blue-50);
+}
+
+.markdown-preview-view .callout[data-callout="writing"] {
+  --callout-accent: var(--ielts-red-500);
+  --callout-bg: var(--ielts-red-50);
+}
+
+.markdown-preview-view .callout[data-callout="speaking"] {
+  --callout-accent: var(--ielts-orange-500);
+  --callout-bg: var(--ielts-orange-50);
+}
+
+.markdown-preview-view .callout[data-callout="reading"] {
+  --callout-accent: var(--ielts-yellow-600);
+  --callout-bg: var(--ielts-yellow-50);
+}
+
+.markdown-preview-view .callout[data-callout="listening"] {
+  --callout-accent: var(--ielts-blue-600);
+  --callout-bg: var(--ielts-blue-50);
+}
+
+.markdown-preview-view .callout[data-callout="mistake"] {
+  --callout-accent: var(--ielts-red-600);
+  --callout-bg: var(--ielts-red-50);
+}
+
+.markdown-preview-view .callout[data-callout="example"] {
+  --callout-accent: var(--ielts-neutral-500);
+  --callout-bg: var(--ielts-neutral-100);
+}
+
+.markdown-preview-view .callout[data-callout="tip"] {
+  --callout-accent: var(--ielts-yellow-500);
+  --callout-bg: var(--ielts-yellow-50);
+}
+
+/* ==========================================================================
+   23. RESPONSIVE RULES
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .markdown-preview-view .markdown-preview-sizer {
+    max-width: 100%;
+    padding: 0 var(--ielts-space-4);
+  }
+
+  .vocab-grid {
+    grid-template-columns: 110px 1fr;
+  }
+
+  .dashboard {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .markdown-preview-view h1 {
+    font-size: var(--ielts-fs-2xl);
+  }
+  .markdown-preview-view h2 {
+    font-size: var(--ielts-fs-xl);
+  }
+  .markdown-preview-view h3 {
+    font-size: var(--ielts-fs-lg);
+  }
+
+  .vocab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vocab-grid dt {
+    padding-top: var(--ielts-space-2);
+  }
+
+  .process-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .process-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card,
+  .vocab-card,
+  .grammar-card,
+  .writing-card,
+  .speaking-card,
+  .reading-card,
+  .listening-card {
+    padding: var(--ielts-space-4);
+  }
+
+  .markdown-preview-view table {
+    font-size: var(--ielts-fs-xs);
+  }
+}
+
+/* ==========================================================================
+   24. UTILITIES & ANIMATIONS
+   Subtle transitions only — no flashy motion.
+   ========================================================================== */
+
+.markdown-preview-view a,
+.card,
+.progress-bar,
+.markdown-preview-view img,
+.markdown-preview-view tbody tr,
+.markdown-preview-view .task-list-item input[type="checkbox"] {
+  transition-duration: var(--ielts-duration-base);
+  transition-timing-function: var(--ielts-ease);
+}
+
+.u-text-center {
+  text-align: center;
+}
+.u-text-muted {
+  color: var(--ielts-text-muted);
+}
+.u-text-small {
+  font-size: var(--ielts-fs-xs);
+}
+.u-flex {
+  display: flex;
+  gap: var(--ielts-space-2);
+  flex-wrap: wrap;
+}
+.u-mt-0 {
+  margin-top: 0;
+}
+.u-mb-0 {
+  margin-bottom: 0;
+}
+
+/* End of ielts-theme.css */

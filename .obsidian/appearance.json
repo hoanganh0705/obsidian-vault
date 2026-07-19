@@ -1,3 +1,6 @@
 {
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [
+    "ielts-highlight",
+    "ielts-theme"
+  ]
 }
