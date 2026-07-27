@@ -1,0 +1,4 @@
+- **How often do you go to the cinema?** (Bạn có hay đi xem phim không?)
+- **Where do you usually buy your clothes?** (Bạn thường mua sắm quần áo ở đâu?)
+- **When do you listen to music?** (Khi nào bạn nghe nhạc?)
+- **Who do you spend your weekends with?** (Bạn dành thời gian cuối tuần với ai?)
