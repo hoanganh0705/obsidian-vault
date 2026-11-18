@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 Ielts/Speaking/Parts/Part 3/Question Types/Specifying And Identifying.md",
+                "file": "DSA/FAANG DSA Master Checklist.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Specifying And Identifying"
+              "title": "FAANG DSA Master Checklist"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -187,8 +189,11 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "e87a91a5876011c9",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "DSA/FAANG DSA Master Checklist.md",
+    "DSA/DSA List Check.md",
+    "DSA",
     "01 Ielts/Speaking/Parts/Part 3/Photos/Pasted image 20260801103507.png",
     "01 Ielts/Speaking/Parts/Part 3/Photos/Pasted image 20260801103423.png",
     "01 Ielts/Speaking/Parts/Part 3/Photos/Pasted image 20260801103404.png",
@@ -201,7 +206,6 @@
     "01 Ielts/Speaking/Parts/Part 3/Photos/Pasted image 20260801103056.png",
     "01 Ielts/Speaking/Parts/Part 3/Photos/Pasted image 20260801103043.png",
     "01 Ielts/Speaking/Parts/Part 3/Photos/Pasted image 20260801103030.png",
-    "01 Ielts/Speaking/Parts/Part 3/Photos/Pasted image 20260801103015.png",
     "01 Ielts/Speaking/Parts/Part 3/Question Types/Opinion.md",
     "01 Ielts/Speaking/Parts/Part 3/Question Types/Prediction.md",
     "01 Ielts/Speaking/Parts/Part 3/Question Types/Problems And Solutions.md",
@@ -233,8 +237,6 @@
     "01 Ielts/Writing/Task 2/Task Type",
     "01 Ielts/Writing/Task 2/Mistake/Grammatical Range And Accuracy.md",
     "01 Ielts/Writing/Task 2/Introduction/Writing Step/Photos",
-    "01 Ielts/Writing/Task 2/Introduction/Writing Step",
-    "01 Ielts/Writing/Task 2/Mistake/Lexical Resource.md",
     "01 Ielts/Listening/Introduction/Introduction.canvas.canvas",
     "01 Ielts/Listening/Litstening.canvas.canvas",
     "Untitled.canvas"
